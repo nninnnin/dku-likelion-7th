@@ -1,0 +1,312 @@
+/*반응형 media query는 맨 아래로! (cascading 때문에)*/
+
+/*font import*/
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:900&subset=korean');
+
+@font-face{
+    font-family:DXMSubtitles;
+    src: url(../font/DXMSubtitlesM-KSCpc-EUC-H.ttf);
+    font-style:normal;
+}
+
+
+html,body{
+    width:100%;
+    height:100%;
+    margin:0;padding:0;
+    font-size:110%;
+    box-sizing: border-box;
+    background-color: seashell;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    scroll-behavior:smooth;
+}
+::-webkit-scrollbar{
+    width:10px
+}
+::-webkit-scrollbar-track{
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+.container{
+    width:80%;
+    color:white;
+    margin:0 auto;
+    background-color: black;
+    font-size:0.9em;
+}
+
+a{
+    text-decoration:none;
+    font-style:italic;
+    color:white;
+}
+
+b{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:4rem;
+    line-height:130%;
+}
+
+hr{
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+
+
+
+.navbar{
+    background-color: black;/*palevioletred*/
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 10%;
+    font-size: 15px;
+    /* border-bottom: white solid 1px; */
+    z-index: 1;
+}
+.navbar a{
+    /* font-style:normal; */
+}
+
+.sticky{
+    position:fixed;
+    top:0;
+    width:60%
+}
+.sticky + .contents{/*이건 정말 생각하기 어려운 기술이네*/
+
+}
+
+.navbarResponsive{
+    display: none;
+}
+.banner img{
+    width:100%;
+    margin-bottom:-15px;
+}
+
+.contents{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d3ab74+15,c679e5+36,8583fb+66,3c3fec+88 */
+    background: #d3ab74; /* Old browsers */
+    background: -moz-linear-gradient(top, #f59715 15%, #c679e5 36%, #8583fb 66%, #3c3fec 88%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f59715 15%,#c679e5 36%,#8583fb 66%,#3c3fec 88%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f59715 15%,#bc45eb 36%,#4340ee 66%,#0fa074 88%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to bottom, #da7f08 5%,#bc45eb 60%,#4340ee 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3ab74', endColorstr='#3c3fec',GradientType=0 ); /* IE6-9 */
+    /*여기까지 그레디언트*/
+
+    
+    padding : 2.5vh 6vw;
+}
+
+
+/* .contents .intro{
+    text-align: center;
+    color:black;
+    background-color: white;
+    padding: 10px 0 0 10px; 
+    border-radius: 50px;
+    margin:auto;
+    width:70%;
+} */
+
+
+.masters b{
+    font-size:1.1em;
+}
+.masters div{
+    font-size:0.9em;
+    width:90%;
+    margin : 0 auto;
+    background-color: white;
+    margin-bottom:10px;
+    padding:1em;
+    color:black;
+    border:seashell 2px solid;
+    border-radius: 25px;
+    overflow:auto;
+}
+
+.masters img{
+    display: block;
+    float:left;
+    width:100px;
+    height:100px;
+    border:seashell 3px solid;
+    border-radius:50%;
+    margin: auto 15px auto 0;
+    shape-outside: circle();
+}
+
+.projects{
+    margin-top:40px;
+}
+.projectImgs{
+    width:90%;
+    margin: 0 auto;
+
+    display:grid;
+    grid-template-areas: 
+        'leftCol rightCol'
+        'leftCol rightCol';
+    grid-template-columns: 5fr 5fr;
+    grid-gap:7px;/*right-Col img margin bottom과 pair*/
+    border:white 8px solid;
+    border-radius: 5px;
+    background-color: white;
+}
+.projectImgs img{
+    border:gray 0.7px solid;
+    border-radius: 4px;
+}
+.projectImgs .rightCol{
+    display:flex;
+    flex-direction: column;
+    align-items: center
+}
+.projectImgs .leftCol img{
+    height:auto;
+    max-width:100%;
+}
+.projectImgs .rightCol img{
+    width:100%;
+    margin-bottom: 7px;/*activityImgs grid-gap과 pair*/
+}
+
+
+.activityImgs{
+    width:90%;
+    margin: 0 auto;
+
+    display:grid;
+    grid-template-areas: 
+        'leftCol centerCol rightCol';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:7px;/*right-Col img margin bottom과 pair*/
+
+    overflow:auto;
+    background-color: white;
+    border:white 8px solid;
+    border-radius: 5px;
+}
+.activityImgs img{
+    border-radius: 3px;
+}
+.activityImgs .leftCol{
+    display:flex;
+    flex-direction: column;
+    align-items: center
+}
+.activityImgs .centerCol img{
+    height:auto;
+    max-width:100%;
+}
+.activityImgs .rightCol img{
+    height:auto;
+    max-width:100%;
+}
+.activityImgs .leftCol img{
+    width:100%;
+    margin-bottom: 7px;/*activityImgs grid-gap과 pair*/
+}
+
+#apply{
+    text-align: center;
+    font-size:1.2em;
+    max-width:80%;
+    margin:0 auto;
+}
+#apply #little{
+    font-size:0.8em;
+}
+
+.apply{
+    margin:3px;
+}
+.projects #applyButton{
+    width:auto;
+    text-align: center;
+    background-color: black;
+    border: black solid 3px;
+    margin:0 auto;
+    padding:6px;
+
+    border-radius: 5px;
+}   
+
+
+.footer{
+    background-color: black;
+    text-align: center;
+    padding:8px;
+    color:white;
+    font-size:0.5em;
+}
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+
+
+/* ----responsive!---- */
+
+/* !!모 바 일!! */
+@media screen and (max-width : 600px){
+    b{
+        font-size:9vw;
+    }
+    .navbar{
+        display:none;
+    }
+    .navbarResponsive{
+        display:block;
+        font-size:2.5vw;
+        padding:0 7%;
+        background-color: black;/*palevioletred*/
+        display:flex;
+        justify-content: space-between;
+        border-bottom: white solid 1px;
+    }
+    .navbarResponsive div{
+        border-radius: 5px;
+        padding: 1em;
+    }
+    .container{
+        width:100%;
+    }
+    .contents{
+        padding-top:0;
+        font-size:3vw;
+    }
+    iframe{
+        width :100%;
+        height:300px;
+    }
+    #topBtn{
+        /*애니메이션으로 스르륵 나타나게*/
+    }
+    .masters div{
+        font-size:2.53vw;
+    }
+}
+
